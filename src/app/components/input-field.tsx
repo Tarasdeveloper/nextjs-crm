@@ -6,9 +6,10 @@ import { Field } from 'formik';
 export interface InputFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
+  as?: 'input' | 'select' | 'textarea';
 }
 
-export default function InputField({ label, id, ...rest }: InputFieldProps) {
+export default function InputField({ label, id, as = 'input', ...rest }: InputFieldProps) {
   return (
     <div className="flex flex-col">
       {label && (
